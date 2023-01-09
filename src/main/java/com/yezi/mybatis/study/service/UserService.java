@@ -1,14 +1,12 @@
-package com.yezi.mybatis.study.dao;
+package com.yezi.mybatis.study.service;
 
 import com.yezi.mybatis.study.model.User;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * @author climb
- * @date 2022/12/13
- * @desc 提供对t_user表的基础操作
+ * @date 2023/1/5
  */
-public interface UserMapper {
+public interface UserService {
 
     /**
      * 根据id查询用户信息
@@ -21,18 +19,18 @@ public interface UserMapper {
      * 新增用户
      * @param user
      */
-    Integer addUser(User user);
+    Boolean addUser(User user);
 
     /**
      * 修改用户密码
      * @param id
      * @param password
      */
-    Integer updateUserPassword(@Param("id") Integer id, @Param("password") String password);
+    Boolean updateUserPassword(Integer id, String password);
 
     /**
      * 根据id删除用户信息
      * @param id
      */
-    Integer deleteUser(Integer id);
+    Boolean deleteUserById(Integer id);
 }
